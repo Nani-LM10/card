@@ -1,0 +1,337 @@
+@use "../../common_scss/common";
+@use "../../common_scss/fonts";
+
+#main-img-div-scss {
+  width: 32rem;
+  height: 32rem;
+  gap: 1rem;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  @media (max-width: 570px) {
+    max-width: 22rem;
+    max-height: 22rem;
+  }
+}
+
+#search-n-clear {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: white;
+  margin-top: 1rem;
+  height: 3rem;
+
+  @media (min-width: 570px) {
+    width: 100%;
+  }
+
+  &:hover {
+    color: #3a3a3c;
+  }
+
+  #search-btn {
+    flex: 3;
+  }
+
+  #clear-btn {
+    flex: 1;
+    display: flex;
+    fill: currentColor;
+    stroke: currentColor;
+
+    svg {
+      color: currentColor;
+      height: 1rem;
+      width: 1rem;
+      stroke: currentColor;
+    }
+  }
+
+  #search-btn,
+  #clear-btn {
+    @extend .main-btn;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.3rem;
+  }
+}
+
+.loder-div-css {
+  min-width: 47vw;
+  margin: 4rem;
+}
+
+#main-img-div {
+  position: relative;
+  border-radius: 12px;
+  background-color: common.$component-back-ground-color;
+  width: 100%;
+  height: auto;
+  max-width: 420px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  flex-direction: column;
+  padding: 16px;
+  margin: 0 auto;
+
+  // Mobile first - smallest screens
+  @media (max-width: 340px) {
+    max-width: 90vw;
+    padding: 12px;
+  }
+
+  // Small screens
+  @media (min-width: 341px) and (max-width: 570px) {
+    max-width: 22rem;
+    min-width: 20rem;
+    padding: 14px;
+  }
+
+  // Medium to larger screens
+  @media (min-width: 571px) and (max-width: 768px) {
+    max-width: 26rem; // 416px
+  }
+
+  // Desktop
+  @media (min-width: 769px) {
+    max-width: 420px;
+  }
+}
+
+#card-player-img-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 0;
+  overflow: hidden;
+  border-radius: 10px;
+  font-weight: 100;
+}
+
+#card-comp {
+  z-index: 7;
+  border-radius: inherit;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  min-width: 388px;
+}
+
+#player-comp-img {
+  z-index: 8;
+  width: 83%;
+  height: 100%;
+  position: absolute !important;
+  object-fit: contain;
+  pointer-events: auto;
+  margin: 0 auto;
+  left: 0;
+  top: 0;
+  cursor: grab;
+}
+
+#player-comp-img:active {
+  cursor: grabbing;
+}
+
+.gap-responsive {
+  gap: 4.2rem !important;
+}
+
+@media (max-width: 800px) {
+  .gap-responsive {
+    gap: 2.5rem !important;
+  }
+}
+
+#ovr-position-container {
+  @extend .common-card-txt-css;
+  top: 10%;
+  left: 21%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 100;
+
+  @media (max-width: 720px) {
+    gap: 9px;
+  }
+
+  #ovr-text-in-card {
+    font-size: clamp(3rem, 4vw, 2.5rem);
+    margin: 0;
+    padding: 0;
+    height: 55px;
+    @extend .cruyff-font;
+  }
+
+  #position-text-in-card {
+    font-size: clamp(2rem, 3.5vw, 1.2rem);
+    @extend .cruyff-font;
+  }
+}
+
+#player-name-in-card {
+  @extend .common-card-txt-css;
+  @extend .cruyff-font;
+  text-align: center;
+  bottom: 25%;
+  font-size: clamp(2rem, 4vw, 1.5rem);
+  font-weight: 100;
+}
+
+.flag-main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.75rem;
+  position: absolute;
+  bottom: 16%;
+  width: 100%;
+  background-color: transparent;
+  margin: 5px 0;
+}
+
+.flag-common-css {
+  z-index: 9;
+  height: clamp(2rem, 4vw, 2.2rem);
+  background-color: inherit;
+}
+
+#trainingLevel-in-card {
+  @extend .common-card-txt-css;
+  @extend .cruyff-font;
+
+  bottom: 6%;
+  width: 100%;
+  font-size: large;
+  text-align: center;
+  font-weight: 900;
+  color: black;
+}
+
+.rank-img {
+  position: absolute;
+  height: 17%;
+  z-index: 9;
+  bottom: 1.2%;
+}
+
+@media (max-width: 768px) {
+  #main-img-div {
+  }
+
+  #card-comp {
+    min-width: 240px;
+    height: auto;
+    width: 80%;
+  }
+
+  #player-comp-img {
+    width: 81%;
+    height: auto;
+  }
+
+  #ovr-position-container {
+    top: 9.7%;
+    left: 27%;
+    gap: 0.65rem;
+    #ovr-text-in-card {
+      font-size: 2.05rem;
+      height: 25px;
+    }
+
+    #position-text-in-card {
+      font-size: 1.4rem;
+    }
+  }
+
+  #player-name-in-card {
+    font-size: 1.3rem;
+    bottom: 25%;
+    right: 41%;
+  }
+
+  .flag-main-container {
+    gap: 1.85rem;
+    bottom: 15.5%;
+  }
+
+  .flag-common-css {
+    height: 1.4rem;
+  }
+
+  #trainingLevel-in-card {
+    font-size: 0.8rem;
+    bottom: 5.5%;
+  }
+
+  .rank-img {
+    height: 16%;
+    bottom: 1.8%;
+  }
+}
+
+@media (max-width: 362px) and (max-height: 795px) {
+  #card-comp {
+    min-width: 240px;
+    height: auto;
+    width: 80%;
+  }
+
+  #player-comp-img {
+    width: 81%;
+    height: auto;
+  }
+
+  #ovr-position-container {
+    top: 9.5%;
+    left: 26%; // adjusted for better alignment
+    gap: 0.5rem;
+
+    #ovr-text-in-card {
+      font-size: 2.05rem;
+      height: 27px;
+    }
+
+    #position-text-in-card {
+      font-size: 1.3rem;
+    }
+  }
+
+  #player-name-in-card {
+    font-size: 1.2rem;
+    bottom: 25%;
+    left: 0;
+    width: 100%;
+  }
+
+  .flag-main-container {
+    gap: 1.76rem;
+    bottom: 15.5%;
+  }
+
+  .flag-common-css {
+    height: 1.3rem;
+  }
+
+  #trainingLevel-in-card {
+    font-size: 0.75rem;
+    bottom: 5.5%;
+  }
+
+  .rank-img {
+    height: 15.5%;
+    bottom: 1.8%;
+  }
+}
